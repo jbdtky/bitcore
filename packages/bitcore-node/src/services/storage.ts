@@ -34,7 +34,7 @@ export class StorageService {
       let { dbName, dbHost, dbPort, dbUser, dbPass, dbAuthSource } = options;
       let auth = dbUser !== '' && dbPass !== '' ? `${dbUser}:${dbPass}@` : '';
       let authSource = dbAuthSource !== '' ? `&authSource=${dbAuthSource}` : '';
-      const connectUrl = `mongodb://${auth}${dbHost}:${dbPort}/${dbName}?socketTimeoutMS=3600000&noDelay=true${dbAuthSource}`;
+      const connectUrl = `mongodb://${auth}${dbHost}:${dbPort}/${dbName}?socketTimeoutMS=3600000&noDelay=true${authSource}`;
       let attemptConnect = async () => {
         return MongoClient.connect(
           connectUrl,
