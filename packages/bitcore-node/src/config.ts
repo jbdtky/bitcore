@@ -59,6 +59,7 @@ const Config = function(): ConfigType {
     dbPort: process.env.DB_PORT || '27017',
     dbUser: process.env.DB_USER || '',
     dbPass: process.env.DB_PASS || '',
+    dbAuthSource: process.env.DB_AUTH_SOURCE || '',
     numWorkers: cpus().length,
     chains: {},
     modules: ['./bitcoin', './bitcoin-cash', './ethereum'],
